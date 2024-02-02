@@ -157,6 +157,7 @@ index_name = "gcash-text-real-wc-2000-1000-all-mpnet-base-v2-400-400"
 AZURE_SEARCH_KEY = "40tIOlb2LBn1o0zxfqGYwm7ssm3qBfdajTKScl3D1BAzSeDFEgaw"
 from azure.core.credentials import AzureKeyCredential
 
+
 def simple_text_query(search_text="spa"):
     # [START simple_query]
     from azure.core.credentials import AzureKeyCredential
@@ -226,7 +227,8 @@ def config():
 @bp.before_app_serving
 async def setup_clients():
     os.environ["AZURE_SEARCH_SERVICE"] = "https://aisearch-auseast-1.search.windows.net/"
-    os.environ["AZURE_SEARCH_INDEX"] = "gcash-text-real-wc-2000-1000-all-mpnet-base-v2-400-400"
+    # os.environ["AZURE_SEARCH_INDEX"] = "gcash-text-real-wc-2000-1000-all-mpnet-base-v2-400-400" NOTE: This is for wealth coach
+    os.environ["AZURE_SEARCH_INDEX"] = "gcash-html-cxcopilot-2000-200-text-embed-ada-002-1-400-400"
     os.environ["AZURE_SEARCH_KEY"] = "40tIOlb2LBn1o0zxfqGYwm7ssm3qBfdajTKScl3D1BAzSeDFEgaw"
     os.environ["AZURE_OPENAI_RESOURCE"] = "gcashwealthcoachpocopenai"
     os.environ["AZURE_OPENAI_MODEL"] =  "gpt-4"
